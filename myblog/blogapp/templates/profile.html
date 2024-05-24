@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%load static%}
+
+{%block body%}
+<div class="container  text-center">
+<h1 class="text-center text-white">Welcome, {{ profile.user.username }}</h1>
+    <!-- Display the profile image --><br><br>
+    {% if profile.image %}
+        <img src="{{ profile.image.url }}" class="rounded-circle " style="height:200px;width:200px" alt="Profile Image">
+    {% else %}
+        <!-- If no image is uploaded, display a default image -->
+        <img src="{% static 'default.jpg' %}" alt="Default Profile Image" >
+    {% endif %}
+    <h3 class="text-success text-capitalize mt-3">{{ profile.user.username }}</h3>
+</div>
+
+
+
+
+
+
+
+
+{%endblock%}
